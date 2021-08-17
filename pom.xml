@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.3.2.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+    </parent>
+    <artifactId>user-service</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>user-service</name>
+    <description>user-service</description>
+
+    <properties>
+        <farmersbyte.version>0.0.1-SNAPSHOT</farmersbyte.version>
+        <spring.boot.version>2.3.2.RELEASE</spring.boot.version>
+        <maven.deploy.skip>false</maven.deploy.skip>
+        <platform.version>0.0.1-SNAPSHOT</platform.version>
+        <java.version>11</java.version>
+        <io.grpc.version>1.34.0</io.grpc.version>
+        <protobuf.version>3.14.0</protobuf.version>
+        <transmittable-thread-local.version>2.11.0</transmittable-thread-local.version>
+
+        <!--com.amazonaws:aws-java-sdk-ses-->
+        <aws.sdk.version>1.11.563</aws.sdk.version>
+
+        <!--com.googlecode.libphonenumber:libphonenumber-->
+        <libphonenumber.version>8.10.2</libphonenumber.version>
+
+        <!--org.junit.jupiter:junit-jupiter-engine-->
+        <junit-jupiter.version>5.6.0</junit-jupiter.version>
+
+        <!--org.junit.vintage:junit-vintage-engine-->
+        <junit-vintage.version>5.2.0</junit-vintage.version>
+
+        <!--org.mockito:mockito-junit-jupiter-->
+        <mockito.version>3.2.4</mockito.version>
+
+        <!--org.hamcrest:hamcrest-->
+        <hamcrest.version>2.2</hamcrest.version>
+
+        <!--org.projectlombok:lombok-->
+        <lombok.version>1.18.12</lombok.version>
+
+        <!--org.jacoco:jacoco-maven-plugin-->
+        <jacoco-plugin.version>0.8.5</jacoco-plugin.version>
+
+        <!--org.mapstruct:mapstruct-->
+        <mapstruct.version>1.3.1.Final</mapstruct.version>
+
+        <!--org.apache.maven.plugins:maven-compiler-plugin-->
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+
+        <!--org.apache.maven.plugins:maven-dependency-plugin-->
+        <maven-dependency-plugin.version>3.1.1</maven-dependency-plugin.version>
+
+        <!--org.apache.maven.plugins:maven-resources-plugin-->
+        <maven-resources-plugin.version>2.7</maven-resources-plugin.version>
+
+        <!--org.apache.maven.plugins:maven-surefire-plugin-->
+        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+
+        <!--com.google.cloud.tools:jib-maven-plugin-->
+        <jib.version>1.7.0</jib.version>
+
+        <!--com.fasterxml.uuid:java-uui-generator-->
+        <uuid-generator.version>3.3.0</uuid-generator.version>
+
+        <!--com.auth0:java-jwt-->
+        <java-jwt.version>3.9.0</java-jwt.version>
+
+        <!--commons-io:commons-io-->
+        <commons-io.version>2.6</commons-io.version>
+
+        <!--org.apache.commons:commons-lang3-->
+        <commons.lang.version>3.9</commons.lang.version>
+
+        <!--org.apache.commons:commons-collections4-->
+        <commons.collections4.version>4.4</commons.collections4.version>
+
+        <!--javax.validation:validation-api-->
+        <validation-api.version>2.0.1.Final</validation-api.version>
+
+        <!--com.fasterxml.jackson.core:jackson-databind-->
+        <jackson-databind.version>2.10.3</jackson-databind.version>
+
+        <!--com.fasterxml.jackson.datatype:jackson-datatype-jsr310-->
+        <jackson-datatype-jsr310.version>2.10.3</jackson-datatype-jsr310.version>
+
+        <!--org.json:json-->
+        <json.version>20180813</json.version>
+
+        <!--com.google.code.gson:gson-->
+        <google.gson.version>2.8.5</google.gson.version>
+
+        <!--org.pitest:pitest-maven-->
+        <pitest.version>1.5.0</pitest.version>
+
+        <!--org.pitest:pitest-junit5-plugin-->
+        <pitest-junit.version>0.11</pitest-junit.version>
+
+        <!--org.codehaus.groovy:groovy-eclipse-compiler-->
+        <groovy-eclipse-compiler.version>3.6.0-01</groovy-eclipse-compiler.version>
+
+        <!--org.codehaus.groovy:groovy-eclipse-batch-->
+        <groovy-eclipse-batch.version>2.5.8-02</groovy-eclipse-batch.version>
+
+        <!--org.spockframework:spock-spring-->
+        <spock-spring.version>1.3-groovy-2.5</spock-spring.version>
+
+        <!--io.opentracing:opentracing-api-->
+        <opentracing.version>0.33.0</opentracing.version>
+
+        <!--cglib:cglib-nodep-->
+        <cglib-nodep.version>3.2.5</cglib-nodep.version>
+
+        <!--org.objenesis:objenesis-->
+        <objenesis.version>2.5.1</objenesis.version>
+
+        <auth0.version>3.8.3</auth0.version>
+
+        <grpc-testing.version>1.28.0</grpc-testing.version>
+
+        <springfox-swagger-ui.version>2.9.2</springfox-swagger-ui.version>
+        <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
+        <swagger-models.version>1.6.0</swagger-models.version>
+        <swagger-annotations.version>1.6.0</swagger-annotations.version>
+        <logstash-logback-encoder.version>6.2</logstash-logback-encoder.version>
+
+        <commons-lang3.version>3.9</commons-lang3.version>
+        <commons-collections4.version>4.4</commons-collections4.version>
+        <guava.version>28.1-jre</guava.version>
+        <logstash-logback-encoder.version>6.2</logstash-logback-encoder.version>
+        <httpclient.version>4.5.10</httpclient.version>
+        <okhttp.version>3.14.4</okhttp.version>
+        <commons-io.version>2.6</commons-io.version>
+
+        <org.json.version>20190722</org.json.version>
+        <httpclient.version>4.5.10</httpclient.version>
+        <jacoco.coverage.instruction>0</jacoco.coverage.instruction>
+        <jacoco.coverage.method>0</jacoco.coverage.method>
+        <jacoco.coverage.line>0</jacoco.coverage.line>
+        <jacoco.coverage.branch>0</jacoco.coverage.branch>
+        <jacoco.coverage.complexity>0</jacoco.coverage.complexity>
+        <jacoco.coverage.class>0</jacoco.coverage.class>
+        <logstash-logback-encoder.version>6.2</logstash-logback-encoder.version>
+        <logbook-spring-boot-starter.version>1.13.0</logbook-spring-boot-starter.version>
+        <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
+    </properties>
+    <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <version>${spring.boot.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>${httpclient.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring.boot.version}</version>
+            <exclusions>
+                <!-- exclude hibernate validator -->
+                <exclusion>
+                    <groupId>org.hibernate.validator</groupId>
+                    <artifactId>hibernate-validator</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>${mapstruct.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-processor</artifactId>
+            <version>${mapstruct.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-oauth2</artifactId>
+            <version>2.1.2.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>java-jwt</artifactId>
+            <version>${java-jwt.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${springfox-swagger2.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.swagger</groupId>
+                    <artifactId>swagger-annotations</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.swagger</groupId>
+                    <artifactId>swagger-models</artifactId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>guava</artifactId>
+                    <groupId>com.google.guava</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${springfox-swagger-ui.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-models</artifactId>
+            <version>${swagger-models.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>${swagger-annotations.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>${commons-collections4.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/net.logstash.logback/logstash-logback-encoder -->
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+            <version>${logstash-logback-encoder.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>${httpclient.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>${okhttp.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${javax.servlet-api.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.authy</groupId>
+            <artifactId>authy-java</artifactId>
+            <version>1.4.0</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.authy</groupId>
+            <artifactId>authy-java</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring.boot.version}</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>junit</groupId>
+                    <artifactId>junit</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+            <version>4.13.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.uuid</groupId>
+            <artifactId>java-uuid-generator</artifactId>
+            <version>3.1.3</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/net.logstash.logback/logstash-logback-encoder -->
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+            <version>${logstash-logback-encoder.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.zalando/logbook-spring-boot-starter -->
+        <dependency>
+            <groupId>org.zalando</groupId>
+            <artifactId>logbook-spring-boot-starter</artifactId>
+            <version>${logbook-spring-boot-starter.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apiguardian</groupId>
+                    <artifactId>apiguardian-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk-ses</artifactId>
+            <version>${aws.sdk.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.github.jknack</groupId>
+            <artifactId>handlebars</artifactId>
+            <version>4.1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.jknack</groupId>
+            <artifactId>handlebars-jackson2</artifactId>
+            <version>4.1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${google.gson.version}</version>
+        </dependency>
+
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>${maven-dependency-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>copy</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.projectlombok</groupId>
+                                    <artifactId>lombok</artifactId>
+                                    <version>${lombok.version}</version>
+                                    <type>jar</type>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco-plugin.version}</version>
+                <configuration>
+                    <excludes>
+                        <exclude>**/*Constant*</exclude>
+                    </excludes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>jacoco-check</id>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <rule>
+                                    <limits>
+                                        <limit>
+                                            <counter>INSTRUCTION</counter>
+                                            <minimum>0.0</minimum>
+                                        </limit>
+                                        <limit>
+                                            <counter>METHOD</counter>
+                                            <minimum>0.0</minimum>
+                                        </limit>
+                                        <limit>
+                                            <counter>LINE</counter>
+                                            <minimum>0.0</minimum>
+                                        </limit>
+                                        <limit>
+                                            <counter>BRANCH</counter>
+                                            <minimum>0.0</minimum>
+                                        </limit>
+                                        <limit>
+                                            <counter>COMPLEXITY</counter>
+                                            <minimum>0.0</minimum>
+                                        </limit>
+                                        <limit>
+                                            <counter>CLASS</counter>
+                                            <minimum>0.0</minimum>
+                                        </limit>
+                                    </limits>
+                                </rule>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>${jib.version}</version>
+                <configuration>
+                    <to>
+<!--                        <image>${image.path}</image>-->
+                    </to>
+                </configuration>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+    <profiles>
+        <profile>
+            <id>local</id>
+            <properties>
+                <spring.profiles.active>local</spring.profiles.active>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <spring.profiles.active>prod</spring.profiles.active>
+            </properties>
+        </profile>
+    </profiles>
+</project>

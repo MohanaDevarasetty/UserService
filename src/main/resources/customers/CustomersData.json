@@ -1,0 +1,8 @@
+{
+  "contentType": "CustomersData",
+  "organizationId": "111111111111111111111111",
+  "content": [
+    {"id":"7d2bd988-c800-45c8-933a-a06344440b6b","lastName":"Test","firstName":"Raghunath","name":"Raghunath Posa","picture":"","gender":"Male","phone":"1111111111","village":"Koutla-B","mandal":"Sarangapur","district":"Nirmal","state":"Telangana","pincode":"504106"},
+    {"id":"6cc9cf84-6493-42bd-9c30-b98904a83d80","lastName":"Test","firstName":"Aakash","name":"Kothakapu Potha Reddy","picture":"","gender":"Male","phone":"0000000000","village":"Koutla-B","mandal":"Sarangapur","district":"Nirmal","state":"Telangana","pincode":"504106"},
+  ]
+}

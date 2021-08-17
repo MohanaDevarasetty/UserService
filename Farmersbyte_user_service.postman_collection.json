@@ -1,0 +1,253 @@
+{
+	"id": "ce5658f8-4d32-ff6b-0c72-8d753b7bb0c2",
+	"name": "Farmersbyte",
+	"description": "",
+	"order": [],
+	"folders": [
+		{
+			"name": "farmersbyte-invoice",
+			"description": "",
+			"collectionId": "ce5658f8-4d32-ff6b-0c72-8d753b7bb0c2",
+			"order": [],
+			"owner": "922137",
+			"folders_order": [],
+			"id": "8d5831e2-372c-1e7e-7719-2250a4d1887f"
+		},
+		{
+			"name": "user-service",
+			"description": "",
+			"collectionId": "ce5658f8-4d32-ff6b-0c72-8d753b7bb0c2",
+			"order": [
+				"668faf0e-342a-4b10-3f34-e1b79b8dc972",
+				"b693ea52-525a-c36f-648c-f6912bc41849",
+				"6e2a3df6-64de-62ae-5db6-c4772d1374d9",
+				"47a774dc-7176-080b-2ca8-f4e13b1219c3",
+				"8748736c-8eb6-ed62-9c2f-3a73d19db947",
+				"ee9e3afc-89b8-7a7a-02e1-8c36987ae4d7"
+			],
+			"owner": "922137",
+			"folders_order": [],
+			"id": "f8cd6b15-1023-0f1a-2afe-a023cae83746"
+		}
+	],
+	"folders_order": [
+		"f8cd6b15-1023-0f1a-2afe-a023cae83746",
+		"8d5831e2-372c-1e7e-7719-2250a4d1887f"
+	],
+	"timestamp": 1618196678466,
+	"owner": "922137",
+	"public": false,
+	"requests": [
+		{
+			"id": "47a774dc-7176-080b-2ca8-f4e13b1219c3",
+			"headers": "//Platform-Type: WEBSITE\n//Tenant-Id: prasadseeds12\nAuthorization: bearer 6becb9a7-6165-4d07-b744-a205726a54ab\n",
+			"headerData": [
+				{
+					"key": "",
+					"value": "",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "Platform-Type",
+					"value": "WEBSITE",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "Tenant-Id",
+					"value": "prasadseeds12",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "Authorization",
+					"value": "bearer 6becb9a7-6165-4d07-b744-a205726a54ab",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8021/user-management/api/v1/user/principal",
+			"folder": "f8cd6b15-1023-0f1a-2afe-a023cae83746",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1622386979395,
+			"name": "User Principal",
+			"description": "",
+			"collectionId": "ce5658f8-4d32-ff6b-0c72-8d753b7bb0c2",
+			"responses": []
+		},
+		{
+			"id": "668faf0e-342a-4b10-3f34-e1b79b8dc972",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8021/user-management/api/v2/user/signup",
+			"folder": "f8cd6b15-1023-0f1a-2afe-a023cae83746",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1622509385177,
+			"name": "User Signup",
+			"description": "",
+			"collectionId": "ce5658f8-4d32-ff6b-0c72-8d753b7bb0c2",
+			"responses": [],
+			"rawModeData": "{\n\t\"userName\": \"nagarajuDevarasetty\",\n\t\"email\": \"d.m.v.n.raju@gmail.com\",\n\t\"phone\": \"9989898989\",\n\t\"pwdHash\": \"asdfsdsdfsd\",\n\t\"countryCode\": \"91\"\n}"
+		},
+		{
+			"id": "6e2a3df6-64de-62ae-5db6-c4772d1374d9",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8021/user-management/api/v2/user/signin",
+			"folder": "f8cd6b15-1023-0f1a-2afe-a023cae83746",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1622509432369,
+			"name": "User signin",
+			"description": "",
+			"collectionId": "ce5658f8-4d32-ff6b-0c72-8d753b7bb0c2",
+			"responses": [],
+			"rawModeData": "{\n\t\"userName\": \"nagarajuDevarasetty\",\n\t\"password\": \"asdfsdsdfsd\"\n}"
+		},
+		{
+			"id": "8748736c-8eb6-ed62-9c2f-3a73d19db947",
+			"headers": "Content-Type: application/json\nAuthorization: bearer bae1e473-2f9d-4bdf-9d2c-0b4ae6479457\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "bearer bae1e473-2f9d-4bdf-9d2c-0b4ae6479457",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8021/user-management/api/v1/user/resetPassword",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1622509438321,
+			"name": "Reset Password",
+			"description": "",
+			"collectionId": "ce5658f8-4d32-ff6b-0c72-8d753b7bb0c2",
+			"responses": [],
+			"rawModeData": "{\n\t\"username\": \"nagarajuDevarasetty\"\n}"
+		},
+		{
+			"id": "b693ea52-525a-c36f-648c-f6912bc41849",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8021/user-management/api/v2/user/signup/verify",
+			"folder": "f8cd6b15-1023-0f1a-2afe-a023cae83746",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1622509411512,
+			"name": "User signup Verification",
+			"description": "",
+			"collectionId": "ce5658f8-4d32-ff6b-0c72-8d753b7bb0c2",
+			"responses": [],
+			"rawModeData": "{\n    \"id\": null,\n    \"adminData\": null,\n    \"userName\": \"nagarajuDevarasetty\",\n    \"email\": \"d.m.v.n.raju@gmail.com\",\n    \"password\": \"asdfsdsdfsd\",\n    \"phone\": \"9989898989\",\n    \"countryCode\": \"91\",\n    \"mfaUserId\": 196463907,\n    \"mfaToken\": \"4859774\"\n}"
+		},
+		{
+			"id": "ee9e3afc-89b8-7a7a-02e1-8c36987ae4d7",
+			"headers": "Authorization: bearer e65c269b-7077-4674-b8fc-008430716648\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "bearer e65c269b-7077-4674-b8fc-008430716648",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8021/user-management/api/v1/user/changePassword",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1622509464633,
+			"name": "Change Password",
+			"description": "",
+			"collectionId": "ce5658f8-4d32-ff6b-0c72-8d753b7bb0c2",
+			"responses": [],
+			"rawModeData": "{\n\t\"oldPassword\": \"asdfsdsdfsd\",\n\t\"newPassword\": \"newpass\",\n\t\"userName\": \"nagarajuDevarasetty\"\n}"
+		}
+	]
+}
